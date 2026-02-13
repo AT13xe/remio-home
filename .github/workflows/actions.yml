@@ -2,8 +2,6 @@ name: Remio Home Docker Image CI
 
 on:
   push:
-    branches:
-      - main
     tags:
       - "v*"
   workflow_dispatch:
@@ -33,7 +31,7 @@ jobs:
         run: |
           VERSION=${GITHUB_REF#refs/tags/}
           echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
-          echo "TAGS=your-dockerhub-username/remio-home:latest,your-dockerhub-username/remio-home:$VERSION" >> $GITHUB_OUTPUT
+          echo "TAGS=at13xe/remio-home:latest,at13xe/remio-home:$VERSION" >> $GITHUB_OUTPUT
 
       - name: Build and Push Docker Image
         uses: docker/build-push-action@v5
