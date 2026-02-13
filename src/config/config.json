@@ -15,8 +15,12 @@
     "hoverAnimate": "top"
   },
   "bgConfig": {
-    "bg": "https://s2.loli.net/2024/06/21/euQ48saP7UgMyDr.webp",
-    "mbg": "https://s2.loli.net/2024/06/21/59b6eRscAvQWHT1.webp",
+    "bg": [
+      "/random/h"
+    ],
+    "mbg": [
+      "/random/v"
+    ],
     "blur": "sm",
     "audio": null,
     "bgStyle": null,
@@ -136,7 +140,7 @@
     "bodyHtml": null
   },
   "version": "latest",
-  "remark": null,
+  "remark": "null",
   "created_at": "2026-02-13T10:55:27.609Z",
-  "updated_at": "2026-02-13T11:09:43.747Z"
+  "updated_at": "2026-02-13T11:49:32.408Z"
 }
