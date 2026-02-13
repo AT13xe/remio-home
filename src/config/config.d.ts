@@ -64,8 +64,8 @@ export interface SocialConfig {
   loading?: string | boolean;
 }
 export interface BgConfig {
-  bg?: string; // pc背景图
-  mbg?: string; // 移动端背景图
+  bg?: string | string[]; // pc背景图，支持单个图片或图片数组
+  mbg?: string | string[]; // 移动端背景图，支持单个图片或图片数组
   audio?: string; // 背景音频
   bgStyle?: string; // 背景飘浮风格 可选 sakura 或者 snow 或者自行填写飘浮物资源图片
   blur?: string;

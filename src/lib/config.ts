@@ -138,7 +138,7 @@ export const transformConfig = (appConfig: AppConfig) => {
     } else {
       bgs.push(bgConfig.bg);
     }
-  } else if (Array.isArray(bgConfig.bg)) {
+  } else if (Array.isArray(bgConfig.bg) && bgConfig.bg !== undefined) {
     bgs = bgConfig.bg.map(url => {
       if (url.startsWith('/random/')) {
         const type = url.split('/')[2]; // 获取类型部分
@@ -168,7 +168,7 @@ export const transformConfig = (appConfig: AppConfig) => {
     } else {
       mbgs.push(bgConfig.mbg);
     }
-  } else if (Array.isArray(bgConfig.mbg)) {
+  } else if (Array.isArray(bgConfig.mbg) && bgConfig.mbg !== undefined) {
     mbgs = bgConfig.mbg.map(url => {
       if (url.startsWith('/random/')) {
         const type = url.split('/')[2]; // 获取类型部分
