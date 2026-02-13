@@ -1,249 +1,142 @@
 {
-  "name": "AT13xeの主页✨",
+  "id": 1,
+  "name": "AT13xeの主页",
   "favicon": "/favicon.ico",
-  "keywords": "AT13xeの次元,AT13xe的个人博客,AT13xe,个人主页,主页,个人记录,技术博客,个人生活",
+  "keywords": "AT13xe,个人主页,主页",
   "description": "AT13xeの次元，兴趣至上，内容随缘，个人主页",
+  "domain": "",
   "avatarConfig": {
-    "src": "https://s2.loli.net/2024/06/19/8zlOyDUnGjXeHpi.webp",
+    "src": "https://q2.qlogo.cn/headimg_dl?dst_uin=3639191908&spec=0",
     "size": 150,
     "round": "full",
-    "style": "wave",
-    "hoverAnimate": "top",
+    "style": "glint",
     "hidden": false,
-    "aloneRight": false
+    "aloneRight": false,
+    "hoverAnimate": "top"
   },
   "bgConfig": {
-    "bg": ["https://s2.loli.net/2024/06/21/euQ48saP7UgMyDr.webp"],
-    "mbg": ["https://s2.loli.net/2024/06/21/59b6eRscAvQWHT1.webp"],
-    "bgStyle": "snow",
-    "blur": "",
-    "cardOpacity": 0.1,
+    "bg": "https://s2.loli.net/2024/06/21/euQ48saP7UgMyDr.webp",
+    "mbg": "https://s2.loli.net/2024/06/21/59b6eRscAvQWHT1.webp",
+    "blur": "sm",
+    "audio": null,
+    "bgStyle": null,
     "carousel": true,
+    "autoAnimate": false,
+    "cardOpacity": 0.3,
     "carouselGap": 5,
     "transitionTime": 0.7,
-    "transitionStyle": "default",
-    "autoAnimate": false
+    "transitionStyle": "default"
   },
   "globalStyle": {
-    "primaryColor": "#0dbf56",
-    "theme": "switcher",
-    "weather": true
+    "fonts": null,
+    "theme": "dark",
+    "weather": false,
+    "fallback": null,
+    "primaryColor": "#ad9dff"
   },
   "layoutConfig": {
-    "gapSize": "lg",
-    "style": "",
+    "style": "vertical",
+    "gapSize": "md",
     "istTransition": true
   },
   "subTitle": "https://v1.hitokoto.cn?c=a&c=b&c=c",
   "subTitleConfig": {
+    "desc": "这里是AT13xeの主页",
+    "heart": true,
+    "style": "default",
+    "shadow": true,
     "typing": true,
+    "content": "Hello💫",
     "loading": "wave",
-    "loopTyping": true,
-    "shadow": false,
-    "typingCursor": true,
-    "showFrom": true,
-    "style": "desc",
     "gapDelay": 0.05,
-    "content": "Hello，这里是AT13xeの主页",
-    "desc": "欢迎来到AT13xeの主页，我希望我能在实践中不断成长"
+    "showFrom": true,
+    "typingGap": 10,
+    "loopTyping": false,
+    "typingCursor": true
   },
   "links": [
     {
-      "title": "github",
-      "color": "#000000",
       "url": "https://github.com/AT13xe",
-      "icon": "github"
+      "icon": "github",
+      "color": "#000000",
+      "title": "github"
     },
     {
-      "title": "email",
-      "color": "#fd3232",
       "url": "mailto:at13xe@at13xe.top",
-      "icon": "email"
+      "icon": "email",
+      "color": "#fd3232",
+      "title": "email"
     }
   ],
   "sites": [
     {
-      "icon": "https://cs.kasuie.cc/icons/d5570e8a-a826-47be-91b2-f6949b743111.webp!cover",
-      "title": "KASUIEの次元",
-      "url": "https://kasuie.cc",
-      "desc": "博客主页"
+      "url": "https://blog.at13xe.top",
+      "desc": "AT13xeのBlog",
+      "icon": "/images/1.jpg",
+      "title": "AT13xeの次元"
     },
     {
-      "icon": "https://cs.kasuie.cc/icons/1419ac35-0a57-4359-bb2f-55a26fc52bd8.png!cover",
-      "title": "Mio 导航",
-      "url": "https://nav.kasuie.cc",
-      "desc": "Mio 网站导航"
+      "url": "https://img.at13xe.top",
+      "desc": "静态随机图服务",
+      "icon": "/images/2.jpg",
+      "title": "AT13xeの随机图"
     },
     {
-      "icon": "https://cs.kasuie.cc/icons/a8cb45a8-c0ec-41e7-ab8f-ff4fe8817230.jpg!cover",
-      "title": "KASUIEのAI",
-      "url": "https://ai.kasuie.cc",
-      "desc": "ChatGPT"
+      "url": "https://cover.at13xe.top",
+      "desc": "视频或文章封面制站",
+      "icon": "/images/3.jpg",
+      "title": "AT13xeの封面"
     },
     {
-      "icon": "https://cs.kasuie.cc/icons/1419ac35-0a57-4359-bb2f-55a26fc52bd8.png!cover",
-      "title": "KASUIEの库",
-      "url": "https://dist.kasuie.cc",
-      "desc": "网盘挂载程序"
+      "url": "https://171382.xyz/_url",
+      "desc": "免费短链服务",
+      "icon": "/images/4.jpg",
+      "title": "AT13xeの短链"
     },
     {
-      "icon": "https://cs.kasuie.cc/icons/0d2e7fe7-3cca-4989-9bb4-4a39cee77801.png!cover",
-      "title": "KASUIEの图床",
-      "url": "https://upload.kasuie.cc",
-      "desc": "图床服务"
-    },
-    {
-      "icon": "https://cs.kasuie.cc/icons/d5570e8a-a826-47be-91b2-f6949b743111.webp!cover",
-      "title": "监控服务",
-      "url": "https://status.kasuie.cc/status",
-      "desc": "服务程序监控"
-    },
-    {
-      "icon": "https://cs.kasuie.cc/icons/d5570e8a-a826-47be-91b2-f6949b743111.webp!cover",
-      "title": "KASUIEのDocs",
-      "url": "https://docs.kasuie.cc",
-      "desc": "文档服务"
-    },
-    {
-      "icon": "https://cs.kasuie.cc/icons/a8cb45a8-c0ec-41e7-ab8f-ff4fe8817230.jpg!cover",
-      "title": "杂七杂八",
-      "desc": "阿巴阿巴..."
-    },
-    {
-      "icon": "https://cs.kasuie.cc/icons/1419ac35-0a57-4359-bb2f-55a26fc52bd8.png!cover",
-      "title": "喜好生成表",
-      "url": "https://like.kasuie.cc",
-      "desc": "个人喜好生成表"
-    },
-    {
-      "icon": "https://cs.kasuie.cc/icons/cbc99c37-af7a-440b-ae17-76befb78042c.webp!cover",
-      "title": "KASUIEの次元",
-      "url": "https://hexo.kasuie.cc",
-      "desc": "Hexo版本博客程序"
-    },
-    {
-      "icon": "https://cs.kasuie.cc/icons/d5570e8a-a826-47be-91b2-f6949b743111.webp!cover",
-      "title": "KASUIEの次元",
-      "url": "https://v3.kasuie.cc",
-      "desc": "上版本的博客程序(服务关了"
-    },
-    {
-      "icon": "https://cs.kasuie.cc/icons/cbc99c37-af7a-440b-ae17-76befb78042c.webp!cover",
-      "title": "KASUIEの次元",
-      "url": "https://v2.kasuie.cc",
-      "desc": "早期博客主题(v2)"
-    },
-    {
-      "icon": "https://cs.kasuie.cc/icons/cbc99c37-af7a-440b-ae17-76befb78042c.webp!cover",
-      "title": "KASUIEの次元",
-      "url": "https://v1.kasuie.cc",
-      "desc": "早期博客主题(v1)"
-    },
-    {
-      "icon": "https://cs.kasuie.cc/icons/cbc99c37-af7a-440b-ae17-76befb78042c.webp!cover",
-      "title": "KASUIEの次元",
-      "url": "https://v0.kasuie.cc",
-      "desc": "早期博客主题(v0)"
-    },
-    {
-      "icon": "https://cs.kasuie.cc/icons/2ccc4639-8fea-455f-a3b0-ef8073869f2a.jpg",
-      "title": "KASUIEの导航",
-      "url": "https://pixlips.github.io",
-      "desc": "导航页(beta)"
+      "url": "https://umami.at13xe.top",
+      "desc": "Blog统计服务",
+      "icon": "/images/5.jpg",
+      "title": "AT13xeの统计"
     }
   ],
   "sitesConfig": {
+    "modal": false,
     "hidden": false,
-    "cardStyle": "",
-    "hoverBlur": true,
-    "hoverScale": true,
+    "cardStyle": "default",
+    "direction": "col",
+    "hoverBlur": false,
     "hoverFlip": true,
-    "direction": "row",
-    "modal": true,
-    "modalTips": "这里大多都是初学时开发的，算是练手的，技术力不高，看起来也很不好看，算是黑历史，但也算是一段记忆的载体了，所以我想把它保存在此。",
-    "modalTitle": ""
+    "modalTips": null,
+    "hoverScale": false,
+    "modalTitle": null
   },
   "socialConfig": {
-    "autoAnimate": true,
-    "loading": "wave",
-    "ripple": true
+    "ripple": true,
+    "loading": "default"
   },
   "sliders": {
-    "data": [
-      {
-        "title": "JavaScript/TypeScript",
-        "value": 70,
-        "icon": "qq"
-      },
-      {
-        "title": "CSS/CSS3",
-        "value": 70,
-        "icon": "qq"
-      },
-      {
-        "title": "React",
-        "value": 40,
-        "icon": "qq"
-      },
-      {
-        "title": "Vue",
-        "value": 60,
-        "icon": "qq"
-      },
-      {
-        "title": "Next.js",
-        "value": 50
-      },
-      {
-        "title": "Nuxt.js",
-        "value": 20
-      },
-      {
-        "title": "Three.js",
-        "value": 10
-      },
-      {
-        "title": "Node.js",
-        "value": 30
-      },
-      {
-        "title": "Electron",
-        "value": 5
-      },
-      {
-        "title": "Spring Boot",
-        "value": 40
-      },
-      {
-        "title": "Linux",
-        "value": 60
-      },
-      {
-        "title": "Mysql",
-        "value": 55
-      },
-      {
-        "title": "Docker",
-        "value": 45
-      }
-    ],
+    "data": null,
+    "color": "#fff",
     "title": "技能加点",
-    "color": "linear-gradient(to right, #ffafbd 0%, #c9ffbf 100%)",
-    "hidden": false,
-    "column": 4
+    "column": 2,
+    "hidden": false
   },
   "footer": {
-    "text": "© 2025 - 2026 By AT13xe",
+    "ICP": null,
     "url": "https://blog.at13xe.top",
-    "ICP": "",
-    "MPSICP": "",
+    "text": "© 2025 - 2026 By AT13xe",
+    "MPSICP": null,
     "direction": "col-reverse",
     "isExternal": true
   },
   "resources": {
-    "css": [],
     "js": [],
-    "bodyHtml": ""
+    "css": [],
+    "bodyHtml": null
   },
-  "domain": "https://www.at13xe.top"
+  "version": "latest",
+  "remark": null,
+  "created_at": "2026-02-13T10:55:27.609Z",
+  "updated_at": "2026-02-13T11:09:43.747Z"
 }
