@@ -51,13 +51,13 @@
     {
       "title": "github",
       "color": "#000000",
-      "url": "https://github.com/kasuie",
+      "url": "https://github.com/AT13xe",
       "icon": "github"
     },
     {
       "title": "email",
       "color": "#fd3232",
-      "url": "mailto:i@kasuie.cc",
+      "url": "mailto:at13xe@at13xe.top",
       "icon": "email"
     }
   ],
@@ -233,10 +233,10 @@
     "column": 4
   },
   "footer": {
-    "text": "© 2020 - 2025 By KASUIE",
-    "url": "https://kasuie.cc",
-    "ICP": "ICP备xxxxxxxx号",
-    "MPSICP": "京公网安备xxxxxxxx号",
+    "text": "© 2025 - 2026 By AT13xe",
+    "url": "https://blog.at13xe.top",
+    "ICP": "",
+    "MPSICP": "",
     "direction": "col-reverse",
     "isExternal": true
   },
@@ -245,5 +245,5 @@
     "js": [],
     "bodyHtml": ""
   },
-  "domain": "https://remio-home.vercel.app"
+  "domain": "https://www.at13xe.top"
 }
