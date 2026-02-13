@@ -4,12 +4,12 @@ on:
   push:
     branches:
       - main
+    tags:
+      - "v*"
   workflow_dispatch:
 
 jobs:
   build:
-    if: contains(github.event.head_commit.message, 'v')
-
     runs-on: ubuntu-latest
 
     steps:
@@ -22,29 +22,27 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
-      - name: Extract version from commit message
-        id: version
-        run: |
-          VERSION=$(echo "${{ github.event.head_commit.message }}" | grep -oE 'v[0-9]+\.[0-9]+\.[0-9]+' || echo "latest")
-          echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
-
-      - name: Docker metadata
-        id: meta
-        uses: docker/metadata-action@v5
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3
         with:
-          images: ghcr.io/AT13xe/remio-home
-          tags: |
-            type=raw,value=latest
-            type=raw,value=${{ steps.version.outputs.VERSION }}
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Build Docker Image
+      - name: Set image tags
+        id: tags
+        run: |
+          VERSION=${GITHUB_REF#refs/tags/}
+          echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
+          echo "TAGS=your-dockerhub-username/remio-home:latest,your-dockerhub-username/remio-home:$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Build and Push Docker Image
         uses: docker/build-push-action@v5
         with:
           file: ./Dockerfile
-          push: false
+          push: true
           platforms: |
             linux/amd64
             linux/arm64
-          tags: ${{ steps.meta.outputs.tags }}
+          tags: ${{ steps.tags.outputs.TAGS }}
           build-args: |
-            VERSION=${{ steps.version.outputs.VERSION }}
+            VERSION=${{ steps.tags.outputs.VERSION }}
