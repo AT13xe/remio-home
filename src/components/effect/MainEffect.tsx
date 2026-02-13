@@ -227,6 +227,32 @@ export function MainEffect({
 
     if (!url) return null;
 
+    // 检查是否是随机图片路径
+    if (url.startsWith('/random/')) {
+      // 如果是随机图片路径，添加data-type属性让random.js脚本识别
+      return (
+        <motion.div
+          key={`${key}:${url}`}
+          className={clsx(classNames, {
+            "animate-[mio-bg-top_6s_linear_reverse_infinite]":
+              key % 4 == 0 && autoAnimate,
+            "animate-[mio-bg-bottom_6s_linear_reverse_infinite]":
+              key % 4 == 1 && autoAnimate,
+            "animate-[mio-bg-right_6s_linear_reverse_infinite]":
+              key % 4 == 2 && autoAnimate,
+            "animate-[mio-bg-left_6s_linear_reverse_infinite]":
+              key % 4 == 3 && autoAnimate,
+          })}
+          data-random-bg={url.split('/')[2]} // 提取类型 (h, v, ys, tx, mia, a)
+          {...variant}
+          transition={{
+            duration: transitionTime || 0.7,
+            ease: "easeInOut",
+          }}
+        ></motion.div>
+      );
+    }
+
     if (isVideo(url)) return renderVideo(url, classNames, url);
 
     return (
@@ -256,9 +282,15 @@ export function MainEffect({
 
   return (
     <section className="z-0">
+      {/* bg-box元素用于支持random.js脚本设置随机背景 */}
+      <div 
+        id="bg-box" 
+        className="fixed brightness-50 dark:brightness-[.25] h-full w-full top-0 left-0 bg-cover bg-fixed bg-center bg-no-repeat"
+      />
       <AnimatePresence>
-        {bgArr && renderBg(bgArr[index], false, index)}
-        {mbgArr && renderBg(mbgArr[mindex], true, mindex)}
+        {/* 如果bgArr中没有随机图片路径，才渲染传统背景图片 */}
+        {!bgArr.some(url => url.startsWith('/random/')) && bgArr && renderBg(bgArr[index], false, index)}
+        {!mbgArr.some(url => url.startsWith('/random/')) && mbgArr && renderBg(mbgArr[mindex], true, mindex)}
         {audio && renderAudio(audio)}
         {/* {bgArr && bgArr.map((v, i) => renderBg(v, false, i))}
         {mbgArr && mbgArr.map((v, i) => renderBg(v, true, i))} */}

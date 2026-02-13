@@ -52,6 +52,11 @@ export default async function RootLayout({
             src={`https://hm.baidu.com/hm.js?${process.env.BAIDUID}`}
           />
         )}
+        {/* 引入随机图片脚本 */}
+        <Script
+          strategy="beforeInteractive"
+          src="https://img.at13xe.top/random.js"
+        />
       </body>
     </html>
   );

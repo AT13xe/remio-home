@@ -125,16 +125,62 @@ export const transformConfig = (appConfig: AppConfig) => {
   if (!bgConfig?.bg) {
     bgs.push("https://s2.loli.net/2024/06/21/euQ48saP7UgMyDr.webp");
   } else if (typeof bgConfig.bg === "string") {
-    bgs.push(bgConfig.bg);
+    // 检查是否是随机图片路径 (支持 h, v, ys, tx, mia, a 类型)
+    if (bgConfig.bg.startsWith('/random/')) {
+      const type = bgConfig.bg.split('/')[2]; // 获取类型部分
+      if (['h', 'v', 'ys', 'tx', 'mia', 'a'].includes(type)) {
+        // 对于支持的随机图片路径，保留原样，让random.js处理
+        bgs.push(bgConfig.bg);
+      } else {
+        // 如果是不支持的类型，使用默认图片
+        bgs.push("https://s2.loli.net/2024/06/21/euQ48saP7UgMyDr.webp");
+      }
+    } else {
+      bgs.push(bgConfig.bg);
+    }
   } else if (Array.isArray(bgConfig.bg)) {
-    bgs = bgConfig.bg;
+    bgs = bgConfig.bg.map(url => {
+      if (url.startsWith('/random/')) {
+        const type = url.split('/')[2]; // 获取类型部分
+        if (['h', 'v', 'ys', 'tx', 'mia', 'a'].includes(type)) {
+          return url;
+        } else {
+          return "https://s2.loli.net/2024/06/21/euQ48saP7UgMyDr.webp";
+        }
+      } else {
+        return url;
+      }
+    });
   }
   if (!bgConfig?.mbg) {
     mbgs.push("https://s2.loli.net/2024/06/21/59b6eRscAvQWHT1.webp");
   } else if (typeof bgConfig.mbg === "string") {
-    mbgs.push(bgConfig.mbg);
+    // 检查是否是随机图片路径 (支持 h, v, ys, tx, mia, a 类型)
+    if (bgConfig.mbg.startsWith('/random/')) {
+      const type = bgConfig.mbg.split('/')[2]; // 获取类型部分
+      if (['h', 'v', 'ys', 'tx', 'mia', 'a'].includes(type)) {
+        // 对于支持的随机图片路径，保留原样，让random.js处理
+        mbgs.push(bgConfig.mbg);
+      } else {
+        // 如果是不支持的类型，使用默认图片
+        mbgs.push("https://s2.loli.net/2024/06/21/59b6eRscAvQWHT1.webp");
+      }
+    } else {
+      mbgs.push(bgConfig.mbg);
+    }
   } else if (Array.isArray(bgConfig.mbg)) {
-    mbgs = bgConfig.mbg;
+    mbgs = bgConfig.mbg.map(url => {
+      if (url.startsWith('/random/')) {
+        const type = url.split('/')[2]; // 获取类型部分
+        if (['h', 'v', 'ys', 'tx', 'mia', 'a'].includes(type)) {
+          return url;
+        } else {
+          return "https://s2.loli.net/2024/06/21/59b6eRscAvQWHT1.webp";
+        }
+      } else {
+        return url;
+      }
+    });
   }
 
   let footers = 0;
