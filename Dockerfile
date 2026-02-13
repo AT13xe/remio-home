@@ -1,5 +1,7 @@
-FROM node:22-alpine AS base
+FROM node:20-alpine AS base
 ARG VERSION
+
+RUN corepack enable
 
 FROM base AS deps
 
@@ -7,33 +9,41 @@ RUN apk add --no-cache libc6-compat
 
 WORKDIR /remio-home
 
+COPY package.json pnpm-lock.yaml ./
+
+RUN pnpm install --frozen-lockfile
+
 COPY . .
-RUN set -eux; \
-    npm install -g pnpm && pnpm i --frozen-lockfile;
+
 
 FROM base AS builder
 
 WORKDIR /remio-home
 
-COPY --from=deps /remio-home/ .
+COPY --from=deps /remio-home .
 
-RUN npm install -g pnpm && pnpm run build
+RUN pnpm run build
+
 
 FROM base AS runner
+
 WORKDIR /remio-home
 
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 
-RUN mkdir .next
-RUN chown nextjs:nodejs .next
+ENV CONFIG_DIR=/remio-home/config \
+    NODE_ENV=production \
+    IS_DOCKER=1 \
+    VERSION=${VERSION}
 
-ENV CONFIG_DIR=/remio-home/config NODE_ENV=production IS_DOCKER=1 VERSION=${VERSION}
-
-COPY --from=builder /remio-home/public ./public
+# standalone output
 COPY --from=builder --chown=nextjs:nodejs /remio-home/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /remio-home/.next/static ./.next/static
+COPY --from=builder /remio-home/public ./public
 
 USER nextjs
+
+EXPOSE 3000
 
 CMD ["node", "server.js"]
