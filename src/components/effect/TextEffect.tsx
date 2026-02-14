@@ -43,7 +43,7 @@ export function TextEffect({
   }, []);
 
   useEffect(() => {
-    if (text?.includes("hitokoto") && text?.includes("http")) {
+    if (text?.includes("at13xe") && text?.includes("http")) {
       setIsHitokoto(true);
       fetch(text)
         .then((response) => {
